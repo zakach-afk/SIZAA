@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bel Ajout (Private) Limited - Official Corporate Portal</title>
+    <style>
+        /* Executive Corporate Theme Variables */
+        :root {
+            --primary-color: #064e3b;   /* Deep Emerald Green */
+            --secondary-color: #0f172a; /* Slate Charcoal */
+            --accent-gold: #d97706;     /* Muted Premium Gold */
+            --bg-light: #f8fafc;        /* Soft White/Grey background */
+            --surface-card: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Glassmorphic Executive Header */
+        nav {
+            background: rgba(6, 78, 59, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--accent-gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Premium Minimalist Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+            color: #ffffff;
+            padding: 130px 20px 160px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .secp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(217, 119, 6, 0.12);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Structural Layout */
+        .container {
+            max-width: 1200px;
+            margin: -60px auto 80px auto;
+            padding: 0 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Split Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Premium Enterprise Cards */
+        .profile-card {
+            background: var(--surface-card);
+            padding: 45px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(6, 78, 59, 0.06);
+            border-color: #cbd5e1;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 45px;
+            height: 2px;
+            background-color: var(--accent-gold);
+        }
+
+        /* Structured Enterprise Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table tr {
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .data-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 16px 0;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .data-table td {
+            text-align: right;
+            padding: 16px 0;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Custom Status Tags */
+        .badge-status {
+            background-color: #f0fdf4;
+            color: #166534;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #bbf7d0;
+        }
+
+        .verify-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .verify-btn:hover {
+            background-color: var(--accent-gold);
+        }
+
+        /* SECP Official Disclaimer Board */
+        .disclaimer-panel {
+            background: var(--surface-card);
+            border-radius: 8px;
+            padding: 35px 40px;
+            margin-top: 40px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.02);
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .disclaimer-panel h4 {
+            color: #9a3412; /* Warning Accent color */
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .disclaimer-panel p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* Minimalist Modern Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 100px;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        footer .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        footer p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Executive Top Navigation -->
+    <nav>
+        <div class="logo">BEL AJOUT<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#incorporation">Statutory Profile</a></li>
+            <li><a href="#compliance">Regulatory Compliance</a></li>
+        </ul>
+    </nav>
+
+    <!-- High-Tier Branding Hero Section -->
+    <section class="hero" id="overview">
+        <div class="secp-badge">
+            Official SECP Certified Entity
+        </div>
+        <h1>BEL AJOUT (PRIVATE) LIMITED</h1>
+        <p>Incorporated under the Companies Act, 2017 as a corporate body limited by shares.</p>
+    </section>
+
+    <!-- Core Dynamic Container -->
+    <div class="container" id="incorporation">
+        <div class="grid">
+            
+            <!-- Left Card: Incorporation Integrity -->
+            <div class="profile-card">
+                <div class="card-title">Incorporation Credentials</div>
+                <table class="data-table">
+                    <tr>
+                        <th>Company Name</th>
+                        <td style="color: var(--primary-color);">BEL AJOUT (PRIVATE) LIMITED</td>
+                    </tr>
+                    <tr>
+                        <th>Corporate CUIN</th>
+                        <td>0320292</td>
+                    </tr>
+                    <tr>
+                        <th>Legal Authority</th>
+                        <td>Companies Act, 2017 (XIX of 2017)</td>
+                    </tr>
+                    <tr>
+                        <th>Company Type</th>
+                        <td><span class="badge-status">Private Limited</span></td>
+                    </tr>
+                    <tr>
+                        <th>Liability Status</th>
+                        <td>Limited by Shares</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Right Card: Verification & Registrar Details -->
+            <div class="profile-card">
+                <div class="card-title">Statutory Execution</div>
+                <table class="data-table">
+                    <tr>
+                        <th>Date of Incorporation</th>
+                        <td>24-December-2025</td>
+                    </tr>
+                    <tr>
+                        <th>Issuing Station</th>
+                        <td>Islamabad, Pakistan</td>
+                    </tr>
+                    <tr>
+                        <th>Signing Authority</th>
+                        <td>Muhammad Shoaib Khan (Deputy Registrar)</td>
+                    </tr>
+                    <tr>
+                        <th>Online Verification</th>
+                        <td>
+                            <a href="https://eservices.secp.gov.pk/eServices/ControllerServlet?request_id=VERIFY_ONLINE_INCORP_CERT&id=0320292" target="_blank" class="verify-btn">
+                                Verify Cert
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- Official SECP Disclaimer Panel -->
+        <div class="disclaimer-panel" id="compliance">
+            <h4>Statutory Regulatory Notice</h4>
+            <p>This certificate of incorporation is not a permission to accept deposits from the general public by offering fake jobs/investment packages and return thereon, indulge in leasing/ financing of vehicles and household products etc., MLM, Pyramid and Ponzi Schemes, Lottery Business, trading in forex and virtual currencies or any other unlawful business activities.</p>
+        </div>
+    </div>
+
+    <!-- Executive Footer -->
+    <footer>
+        <div class="footer-logo">BEL AJOUT (PRIVATE) LIMITED</div>
+        <p>Registered under the Securities and Exchange Commission of Pakistan (SECP).</p>
+        <p style="margin-top: 20px; color: #475569;">&copy; 2026 Bel Ajout. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
