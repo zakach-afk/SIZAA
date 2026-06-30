@@ -214,6 +214,27 @@
             border: 1px solid #bbf7d0;
         }
 
+        .badge-duns {
+            background-color: #fffbeb;
+            color: #b45309;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: 1px solid #fef3c7;
+            letter-spacing: 0.5px;
+        }
+
+        .address-box {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.6;
+            text-align: right;
+            display: inline-block;
+            max-width: 280px;
+        }
+
         .verify-btn {
             display: inline-block;
             background-color: var(--primary-color);
@@ -241,7 +262,7 @@
         }
 
         .disclaimer-panel h4 {
-            color: #9a3412; /* Warning Accent color */
+            color: #9a3412;
             font-size: 1rem;
             font-weight: 700;
             margin-bottom: 10px;
@@ -303,9 +324,9 @@
     <div class="container" id="incorporation">
         <div class="grid">
             
-            <!-- Left Card: Incorporation Integrity -->
+            <!-- Left Card: Incorporation & Global Identity -->
             <div class="profile-card">
-                <div class="card-title">Incorporation Credentials</div>
+                <div class="card-title">Corporate Identification</div>
                 <table class="data-table">
                     <tr>
                         <th>Company Name</th>
@@ -316,6 +337,10 @@
                         <td>0320292</td>
                     </tr>
                     <tr>
+                        <th>D-U-N-S® Number</th>
+                        <td><span class="badge-duns">775322689</span></td>
+                    </tr>
+                    <tr>
                         <th>Legal Authority</th>
                         <td>Companies Act, 2017 (XIX of 2017)</td>
                     </tr>
@@ -323,24 +348,24 @@
                         <th>Company Type</th>
                         <td><span class="badge-status">Private Limited</span></td>
                     </tr>
-                    <tr>
-                        <th>Liability Status</th>
-                        <td>Limited by Shares</td>
-                    </tr>
                 </table>
             </div>
 
-            <!-- Right Card: Verification & Registrar Details -->
+            <!-- Right Card: Operations & Physical Registry -->
             <div class="profile-card">
-                <div class="card-title">Statutory Execution</div>
+                <div class="card-title">Statutory & Location Registry</div>
                 <table class="data-table">
                     <tr>
                         <th>Date of Incorporation</th>
                         <td>24-December-2025</td>
                     </tr>
                     <tr>
-                        <th>Issuing Station</th>
-                        <td>Islamabad, Pakistan</td>
+                        <th>Registered Address</th>
+                        <td>
+                            <span class="address-box">
+                                Chitral House, Jinnah Street, Chitral, 17200, Pakistan
+                            </span>
+                        </td>
                     </tr>
                     <tr>
                         <th>Signing Authority</th>
@@ -350,7 +375,7 @@
                         <th>Online Verification</th>
                         <td>
                             <a href="https://eservices.secp.gov.pk/eServices/ControllerServlet?request_id=VERIFY_ONLINE_INCORP_CERT&id=0320292" target="_blank" class="verify-btn">
-                                Verify Cert
+                                Verify SECP
                             </a>
                         </td>
                     </tr>
@@ -369,7 +394,7 @@
     <!-- Executive Footer -->
     <footer>
         <div class="footer-logo">BEL AJOUT (PRIVATE) LIMITED</div>
-        <p>Registered under the Securities and Exchange Commission of Pakistan (SECP).</p>
+        <p>Registered under the Securities and Exchange Commission of Pakistan (SECP) | Dun & Bradstreet Verified.</p>
         <p style="margin-top: 20px; color: #475569;">&copy; 2026 Bel Ajout. All Rights Reserved.</p>
     </footer>
 
